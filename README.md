@@ -67,13 +67,13 @@ Getting the account identifier wrong is the single most common setup failure, an
 This installs the skill and makes updating it a `git pull`:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/snowflake-connect.git ~/.claude/skills/snowflake-connect
+git clone https://github.com/anand-sharma-8297/snowflake-connect.git ~/.claude/skills/snowflake-connect
 ```
 
 On Windows (PowerShell):
 
 ```powershell
-git clone https://github.com/YOUR-USERNAME/snowflake-connect.git "$env:USERPROFILE\.claude\skills\snowflake-connect"
+git clone https://github.com/anand-sharma-8297/snowflake-connect.git "$env:USERPROFILE\.claude\skills\snowflake-connect"
 ```
 
 ### Option 3 — Run the script directly
@@ -81,7 +81,7 @@ git clone https://github.com/YOUR-USERNAME/snowflake-connect.git "$env:USERPROFI
 You don't actually need the skill installed at all. Clone the repo anywhere and run the script — the skill layer only exists so Claude can do the setup conversationally:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/snowflake-connect.git
+git clone https://github.com/anand-sharma-8297/snowflake-connect.git
 python snowflake-connect/scripts/setup_snowflake_mcp.py --help
 ```
 
