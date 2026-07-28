@@ -6,11 +6,11 @@ Once it's set up, you talk to your warehouse in English:
 
 > **You:** which 10 dealers had the highest cancellation rate last month?
 >
-> **Claude:** *(finds the right table, writes the SQL, runs it, explains the result)*
+> **Claude:** *(in a small schema: explores the tables itself and figures it out. In a warehouse with thousands of tables: needs either a pointer to the right database/schema, or a short glossary you've written — see below — before it can do this reliably.)*
 
 Claude connects as **you**, through your own Snowflake role, so it can only ever see what you can already see. By default it is also **read-only** — it can query and explore, but not modify anything.
 
-**A word on "finds the right table."** In a warehouse with a few dozen or a few hundred tables, Claude can genuinely explore the schema itself (`SHOW TABLES`, `DESCRIBE`) and land on the right one. Real companies often have tens of thousands of tables, and at that scale, blind schema-browsing stops being a good strategy — it's slow, it burns a lot of exploration before it finds anything, and it's prone to picking a table that merely *sounds* right over the one that's actually correct. This skill only sets up the **connection**; it has no idea what your tables mean. For serious use in a large warehouse, either tell Claude which database/schema to start in, or — much better — write a short reference document explaining what your key tables and business terms mean, and have Claude read that first. A one-page glossary beats raw schema-browsing by a wide margin once you're past a few hundred tables.
+**This skill only sets up the connection — it has no idea what your tables mean.** For a warehouse with a few dozen or a few hundred tables, that's fine: Claude can explore the schema itself (`SHOW TABLES`, `DESCRIBE`) and land on the right one. Real companies often have tens of thousands of tables, and at that scale, blind schema-browsing stops being a good strategy — it's slow, it burns a lot of exploration before it finds anything, and it's prone to picking a table that merely *sounds* right over the one that's actually correct. For serious use in a large warehouse, either tell Claude which database/schema to start in, or — much better — write a short reference document explaining what your key tables and business terms mean, and have Claude read that first. A one-page glossary beats raw schema-browsing by a wide margin once you're past a few hundred tables.
 
 ---
 
