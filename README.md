@@ -2,11 +2,7 @@
 
 A [Claude Code](https://claude.com/claude-code) skill that connects your Snowflake account to Claude in about two minutes — using your company's normal SSO login, with no password or key stored anywhere on disk.
 
-Once it's set up, you talk to your warehouse in English:
-
-> **You:** which 10 dealers had the highest cancellation rate last month?
->
-> **Claude:** *(in a small schema: explores the tables itself and figures it out. In a warehouse with thousands of tables: needs either a pointer to the right database/schema, or a short glossary you've written — see below — before it can do this reliably.)*
+Once it's set up, you talk to your warehouse in plain English instead of writing SQL by hand.
 
 Claude connects as **you**, through your own Snowflake role, so it can only ever see what you can already see. By default it is also **read-only** — it can query and explore, but not modify anything.
 
