@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+
+# Never commit Snowflake credentials or connection files
+connections.toml
+connections.toml.bak-*
+*.p8
+*.pem
+.env
+
+# Built package — attach to a release instead of committing
+*.skill
